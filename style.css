@@ -22,3 +22,9 @@
   object-fit: contain;
   margin-bottom: 0.2em;
 }
+
+#resetGame {
+  margin: auto;
+  margin-top: 0.5em;
+  display: block;
+}

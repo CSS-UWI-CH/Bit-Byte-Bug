@@ -1,5 +1,6 @@
 const gameInfo = document.getElementById("gameInfo");
 const reset = document.getElementById("resetGame");
+const buttons = document.getElementsByTagName("button");
 const choices = ["BIT", "BYTE", "BUG"];
 
 const updateGameInfo = (text) => {
@@ -10,8 +11,11 @@ const updateGameInfo = (text) => {
 
 const resetGameInfo = () => {
   gameInfo.innerHTML = "";
+  for (let button of buttons) button.style.visibility = "visible";
   reset.style.visibility = "hidden";
 };
+
+const hideGameButtons = () => {};
 
 const makeChoice = (choice, user = "Player") => {
   let result = choice.id == undefined ? choice : choice.id.toUpperCase();
@@ -24,18 +28,17 @@ const decideWinner = (playerChoice, compChoice) => {
   let compNum = choices.indexOf(compChoice);
   let text = null;
 
-  console.log(playerNum, compNum);
-
-  if (playerNum == compNum) text = "It's a TIE!";
+  if (playerChoice == compChoice) text = "It's a TIE!";
   else if (
-    (playerNum == 0 && compNum == 1) ||
-    (playerNum == 1 && compNum == 2) ||
-    (playerNum == 2 && compNum == 0)
+    (playerChoice == "BIT" && compChoice == "BYTE") ||
+    (playerChoice == "BYTE" && compChoice == "BUG") ||
+    (playerChoice == "BUG" && compChoice == "BIT")
   )
     text = "PLAYER WINS!";
   else text = "COMPUTER WINS!";
 
   updateGameInfo(text);
+  for (let button of buttons) button.style.visibility = "hidden";
   reset.style.visibility = "visible";
 };
 

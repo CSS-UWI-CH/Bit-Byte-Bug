@@ -24,8 +24,6 @@ const makeChoice = (choice, user = "Player") => {
 };
 
 const decideWinner = (playerChoice, compChoice) => {
-  let playerNum = choices.indexOf(playerChoice);
-  let compNum = choices.indexOf(compChoice);
   let text = null;
 
   if (playerChoice == compChoice) text = "It's a TIE!";

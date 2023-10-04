@@ -20,18 +20,19 @@
       <div id="gameContainer">
         <div class="element">
           <img src="images/bit.png" alt="Bit" />
-          <button id="bit">Bit</button>
+          <button id="bit" onclick="runGame(this)">Bit</button>
         </div>
         <div class="element">
           <img src="images/byte.jpg" alt="Byte" />
-          <button id="byte">Byte</button>
+          <button id="byte" onclick="runGame(this)">Byte</button>
         </div>
         <div class="element">
           <img src="Images/bug.png" alt="Bug" />
-          <button id="bug">Bug</button>
+          <button id="bug" onclick="runGame(this)">Bug</button>
         </div>
       </div>
     </section>
+    <button id="resetGame" onclick="resetGameInfo()">RESET</button>
   </body>
   <script src="script.js"></script>
 </html>

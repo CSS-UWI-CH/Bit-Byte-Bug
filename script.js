@@ -10,7 +10,7 @@ const updateGameInfo = (text) => {
 
 const resetGameInfo = () => {
   gameInfo.innerHTML = "";
-  reset.style.visibility = 0;
+  reset.style.visibility = "hidden";
 };
 
 const makeChoice = (choice, user = "Player") => {
@@ -34,7 +34,7 @@ const decideWinner = (playerChoice, compChoice) => {
   else text = "COMPUTER WINS!";
 
   updateGameInfo(text);
-  reset.style.visibility = 1;
+  reset.style.visibility = "visible";
 };
 
 const runGame = (choice) => {

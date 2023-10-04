@@ -14,7 +14,7 @@ const resetGameInfo = () => {
 };
 
 const makeChoice = (choice, user = "Player") => {
-  let result = choice.id == undefined ? choice.toUpperCase() : choice.id;
+  let result = choice.id == undefined ? choice : choice.id.toUpperCase();
   updateGameInfo(`${user} chose ${result}`);
   return result;
 };
@@ -23,6 +23,8 @@ const decideWinner = (playerChoice, compChoice) => {
   let playerNum = choices.indexOf(playerChoice);
   let compNum = choices.indexOf(compChoice);
   let text = null;
+
+  console.log(playerNum, compNum);
 
   if (playerNum == compNum) text = "It's a TIE!";
   else if (
